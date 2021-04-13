@@ -1,0 +1,11 @@
+Bom agora vamos aprender a como ler arquivos de texto no nome.
+Então vou começar criando um arquivo aqui na página do meu projeto.
+Como você já pode perceber já tem uma pasta criada com um arquivo.
+Então faça isso cria um arquivo principal para sua aplicação em uma pasta nessa mesma pasta do meu arquivo
+principal.
+Eu vou criar aqui um arquivo de texto pode ter qualquer nome e qualquer extensão tá.
+Deixe o deixe deixe que o conteúdo interno deles seja textual.
+Pode ter qualquer extensão.
+Então vou chamar aqui por exemplo de Victor que contou Lima.
+Mas poderia ser por exemplo Victor um ponto txt.
+Victor está ponto de Alisson Victor XML e ponto HTML não importa que coloca aqui Victor Ponta Lima.
