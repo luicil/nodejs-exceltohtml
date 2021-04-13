@@ -15,4 +15,4 @@ fs.writeFile("./txt/teste.txt","Teste de gravação !",{encoding: "utf8"},(err) 
     } else {
         console.log("Arquivo salvo com sucesso !");
     }
-})
+});
