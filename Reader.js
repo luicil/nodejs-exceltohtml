@@ -13,20 +13,11 @@ class Reader{
         }catch{
             return undefined;
         }
+    };
 
-        
-
-        // fs.readFile(filePath, {encoding: "utf-8"}, (err, data) =>{
-        //     if(err){
-        //         console.log(err);
-        //         return null;
-        //     } else {
-        //         return data;
-        //     }
-        // });
-
-        //return fs.readFileSync(filePath,{encoding: "utf-8"});
-
+    ReadSync(filePath){
+        //Novo modo que simplifica a leitura(não precisa de async/await):
+        return fs.readFileSync(filePath,{encoding: "utf-8"});
     };
 };
 
