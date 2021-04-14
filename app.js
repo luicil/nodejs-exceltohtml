@@ -4,33 +4,46 @@ const Reader = require("./Reader");
 const Processor = require("./Processor");
 const Table = require("./Table");
 const HtmlParser = require("./HtmlParser");
+const Writer = require("./Writer");
 
 
 async function main(){
     var leitor = new Reader();
     var ret = await leitor.Read("./txt/planilha.csv");
-    cProc(ret);
+    var rHtml = cProc(ret);
+    var escritor = new Writer();
+    ret = escritor.Write("./txt/" + Date.now() + ".html", rHtml);
+    if(ret){
+        console.log("Gravação ok !");
+    } else {
+        console.log("Falha de gravação !");
+    };
 };
 
 function mainSync(){
     var leitor = new Reader();
     var ret = leitor.ReadSync("./txt/planilha.csv");
-    cProc(ret);
-}
+    //console.log(ret);
+    var rHtml = cProc(ret);
+    var escritor = new Writer();
+    ret = escritor.WriteSync("./txt/" + Date.now() + ".html", rHtml);    
+    if(ret){
+        console.log("Gravação ok !");
+    } else {
+        console.log("Falha de gravação !");
+    };
+};
 
 function cProc(data){
-
     var rows = Processor.Process(data);
-    var usuarios = new Table(rows);
-    var html = HtmlParser.Parse(usuarios);
-    console.log(html);
-    
-}
+    //console.log(rows);
+    var table = new Table(rows);
+    //console.log(table);
+    var rHtml = HtmlParser.Parse(table);
+    return rHtml;
+};
 
 //console.log("Sync");
-mainSync();
-// console.log("========================");
-// console.log("Async/Await");
-//main();
-
-
+console.log("=============================");
+//mainSync();
+main();

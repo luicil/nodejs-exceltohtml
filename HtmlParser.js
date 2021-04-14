@@ -2,7 +2,11 @@ const ejs = require("ejs");
 
 class HtmlParser{
     static Parse(table){
-        return ejs.renderFile("./table.ejs", {header: table.header, rows: table.rows});
+        var rHtml = "";
+        ejs.renderFile("./table.ejs", {header: table.header, rows: table.rows}, (err, ret) =>{
+            if(!err){ rHtml = ret; }
+        });
+        return rHtml;
     };
 };
 
