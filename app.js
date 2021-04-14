@@ -5,6 +5,7 @@ const Processor = require("./Processor");
 const Table = require("./Table");
 const HtmlParser = require("./HtmlParser");
 const Writer = require("./Writer");
+const PDFWriter = require("./PDFWriter");
 
 
 async function main(){
@@ -15,6 +16,7 @@ async function main(){
     ret = escritor.Write("./txt/" + Date.now() + ".html", rHtml);
     if(ret){
         console.log("Gravação ok !");
+        PDFWriter.Write("./txt/" + Date.now() + ".pdf", rHtml);
     } else {
         console.log("Falha de gravação !");
     };
@@ -29,6 +31,7 @@ function mainSync(){
     ret = escritor.WriteSync("./txt/" + Date.now() + ".html", rHtml);    
     if(ret){
         console.log("Gravação ok !");
+        PDFWriter.Write("./txt/" + Date.now() + ".pdf", rHtml);
     } else {
         console.log("Falha de gravação !");
     };
